@@ -8,10 +8,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        'green': '#214e34',
+        'green_y': '#214e34',
         'charcoal': '#364156',
         'oxford_blue': '#011638'
       },
+      backgroundImage: theme => ({
+        'underlay': "url('./assets/img/bg-design.jpg')",
+      }),
     },
   },
   plugins: [],
