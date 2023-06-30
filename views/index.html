@@ -8,8 +8,7 @@
     <link rel="icon" href="../assets/img/logo.svg">
     <link rel="stylesheet" href="">
 </head>
-<body class="container relative w-screen bg-sky-100 mx-auto">
-    <img src="../assets/img/bg_design.jpg" alt="underlayer" class="absolute left-0 -top-[26rem] opacity-30 md:w-[81.5rem] overflow-hidden transfrom rotate-90 z-10">
+<body class="container relative w-screen h-fit bg-cover bg-center mx-auto" style="background-image: url('../assets/img/sky.png')">
     <section class="relative z-50 w-full h-[45rem]">
         <header class="relative z-50 w-full md:h-28 flex items-center justify-between bg-gray-100 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-lg shadow-lg p-4 mt-4">
             <img src="../assets/img/logo.svg" alt="logo" width="110" height="60">
@@ -21,40 +20,40 @@
             </ul>
         </header>
 
-        <div class="relative z-50 mt-16 mb-24 flex items-center justify-around w-full h-fit">
-            <div class="p-0 m-0 w-3/6">
+        <section class="relative z-50 w-full h-fit p-4 mt-16">
+            <form action="#" class="w-full h-full flex items-center justify-center">
+                <input type="text" class="w-5/6 h-20 text-4xl p-4 focus:outline-green-400" placeholder="Enter the region or area">
+                <button class="flex items-center justify-center text-white h-[5rem] w-[10rem] bg-gradient-to-br from-oxford_blue to-green-300"><img src="../assets/img/search-location.svg" alt="search" class="w-16 h-16"></button>
+            </form>
+    
+            <div class="w-full mt-16 h-fit grid grid-cols-3 gap-5">
+                <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-60 p-4 flex flex-col justify-around items-center">
+                    <img src="../assets/img/Vector.svg" alt="cloud" class="w-28 h-28">
+                    <p class="text-3xl font-semibold text-oxford_blue">Know today's weather</p>
+                </div>
+                <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-60 p-4 flex flex-col justify-around items-center">
+                    <img src="../assets/img/graph.svg" alt="cloud" class="w-28 h-28">
+                    <p class="text-3xl font-semibold text-oxford_blue">Analyze the changes</p>
+                </div>
+                <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-60 p-4 flex flex-col justify-around items-center">
+                    <img src="../assets/img/sun.svg" alt="cloud" class="w-28 h-28">
+                    <p class="text-3xl font-semibold text-oxford_blue">Know tomorrow's weather</p>
+                </div>
+    
+            </div>
+        </section>
+
+        <div class="relative z-50 mt-16 flex items-center justify-around w-full h-min">
+            <div class="p-0 m-0 w-3/6 mb-16">
                 <h1 class="text-oxford_blue text-8xl font-bold">You <span class="text-green_y">Can't Fight</span>  What <br> You <span class="text-green_y">Don't Know</span>!</h1>
                 <p class="text-xl text-charcoal font-normal p-2">Studying the weather is crucial in the fight against climate change. It helps us identify patterns and trends that help us predict 
                     future weather events and prepare for them.<br>It is also important for developing new technologies and strategies to reduce greenhouse gas 
                     emissions and slow down climate change.
                 </p>
-            </div>
-            <img src="../assets/img/weather-man.svg" alt="man" class="relative w-2/6 opacity-95">
+            </div>]
+            <div></div>
         </div>
     </section>
 
-    <section class="relative z-50 w-full h-fit p-4">
-        <p class="w-full h-full text-6xl font-bold text-black pl-10 mb-4">Give It A try</p>
-        <form action="#" class="w-full h-full flex items-center justify-center">
-            <button type="search" class="flex items-center justify-center text-white h-[5rem] w-[10rem] bg-gradient-to-br from-oxford_blue via-charcoal to-green_y"><img src="../assets/img/search-location.svg" alt="search" class="w-16 h-16"></button>
-            <input type="text" class="w-5/6 h-20 text-4xl p-4 focus:outline-green-400">
-        </form>
-
-        <div class="w-full mt-10 h-fit grid grid-cols-3 gap-5">
-            <div class="rounded-3xl shadow-lg hover:shadow-none bg-white w-full h-60 p-4 flex flex-col justify-around items-center">
-                <img src="../assets/img/Vector.svg" alt="cloud" class="w-28 h-28">
-                <p class="text-3xl font-semibold text-oxford_blue">Know today's weather</p>
-            </div>
-            <div class="rounded-3xl shadow-lg hover:shadow-none bg-white w-full h-60 p-4 flex flex-col justify-around items-center">
-                <img src="../assets/img/graph.svg" alt="cloud" class="w-28 h-28">
-                <p class="text-3xl font-semibold text-oxford_blue">Analyze the changes</p>
-            </div>
-            <div class="rounded-3xl shadow-lg hover:shadow-none bg-white w-full h-60 p-4 flex flex-col justify-around items-center">
-                <img src="../assets/img/sun.svg" alt="cloud" class="w-28 h-28">
-                <p class="text-3xl font-semibold text-oxford_blue">Know tomorrow's weather</p>
-            </div>
-
-        </div>
-    </section>
 </body>
 </html>
