@@ -6,10 +6,9 @@
     <title>Save Your Home | Home Page</title>
     <link rel="stylesheet" href="../assets/css/output.css">
     <link rel="icon" href="../assets/img/logo.svg">
-    <link rel="stylesheet" href="">
 </head>
-<body class="container relative w-screen h-fit bg-cover bg-center mx-auto" style="background-image: url('../assets/img/sky.png')">
-    <section class="relative z-50 w-full h-[45rem]">
+<body class="container relative w-screen h-fit bg-cover bg-center mx-auto" style="background-image: url('../assets/img/sky.png')" id="body">
+    <section class="hidden z-50 w-full h-[45rem]" id="entry">
         <header class="relative z-50 w-full md:h-28 flex items-center justify-between bg-gray-100 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-lg shadow-lg p-4 mt-4">
             <img src="../assets/img/logo.svg" alt="logo" width="110" height="60">
 
@@ -21,12 +20,14 @@
         </header>
 
         <section class="relative z-50 w-full h-fit p-4 mt-16">
-            <form action="#" class="w-full h-full flex items-center justify-center">
-                <input type="text" class="w-5/6 h-20 text-4xl p-4 focus:outline-green-400" placeholder="Enter the region or area">
-                <button class="flex items-center justify-center text-white h-[5rem] w-[10rem] bg-gradient-to-br from-oxford_blue to-green-300"><img src="../assets/img/search-location.svg" alt="search" class="w-16 h-16"></button>
+            <form  id="myForm" action="./index.html" method="POST" class="w-full h-full flex items-center justify-center">
+                <input type="text" name="place" class="w-5/6 h-20 text-4xl p-4 focus:outline-green-400" placeholder="Enter the region or area">
+                <button type="submit" id="search_btn">
+                    <div class="flex items-center justify-center text-white h-[5rem] w-[10rem] bg-gradient-to-br from-oxford_blue to-green-300"><img src="../assets/img/search-location.svg" alt="search" class="w-16 h-16"></div>
+                </button>
             </form>
     
-            <div class="w-full mt-16 h-fit grid grid-cols-3 gap-5">
+            <div class="empty_display w-full mt-16 h-fit grid grid-cols-3 gap-5">
                 <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-60 p-4 flex flex-col justify-around items-center">
                     <img src="../assets/img/Vector.svg" alt="cloud" class="w-28 h-28">
                     <p class="text-3xl font-semibold text-oxford_blue">Know today's weather</p>
@@ -50,10 +51,66 @@
                     future weather events and prepare for them.<br>It is also important for developing new technologies and strategies to reduce greenhouse gas 
                     emissions and slow down climate change.
                 </p>
-            </div>]
+            </div>
             <div></div>
         </div>
     </section>
 
+    <section class="w-full" id="main">
+        <form  id="myForm2" action="./index.html" method="POST" class="mt-8 w-full h-full flex items-center justify-center">
+            <input type="text" name="place2" class="rounded-l-full w-5/6 h-20 text-4xl p-4 pl-9 focus:outline-green-400 shadow-2xl" placeholder="Enter the region or area">
+            <button type="submit" id="search_btn">
+                <div class="flex items-center justify-center text-white h-[5rem] w-[10rem] bg-gradient-to-br from-oxford_blue to-green-300"><img src="../assets/img/search-location.svg" alt="search" class="w-16 h-16"></div>
+            </button>
+        </form>
+
+        <section class="mt-10 w-full h-fit">
+            <p class="text-6xl font-bold text-white mb-4 ">Search Results</p>
+            <div class="relative w-fit h-96 mx-auto bg-black bg-opacity-50 pt-0 p-4 border border-white rounded-3xl">
+                <div class="w-full h-full flex-col justify-around text-white font-medium px-4 pt-0" id="options">
+                    <!-- <div class="w-full h-1/5 flex items-end border-b border-white" id="first">
+                        <p class="text-4xl pr-8" id="place">Name</p>
+                        <p class="text-2xl pr-8" id="state">State</p>
+                        <p class="text-2xl pr-8" id="country">Country</p>
+                    </div>
+                    <div class="w-full h-1/5 flex items-end border-b border-white" id="second">
+                        <p class="text-4xl pr-8" id="place">Name</p>
+                        <p class="text-2xl pr-8" id="state">State</p>
+                        <p class="text-2xl pr-8" id="country">Country</p>
+                    </div>
+                    <div class="w-full h-1/5 flex items-end border-b border-white" id="third">
+                        <p class="text-4xl pr-8" id="place">Name</p>
+                        <p class="text-2xl pr-8" id="state">State</p>
+                        <p class="text-2xl pr-8" id="country">Country</p>
+                    </div>
+                    <div class="w-full h-1/5 flex items-end border-b border-white" id="fourth">
+                        <p class="text-4xl pr-8" id="place">Name</p>
+                        <p class="text-2xl pr-8" id="state">State</p>
+                        <p class="text-2xl pr-8" id="country">Country</p>
+                    </div>
+                    <div class="w-full h-1/5 flex items-end border-b border-white" id="fifth">
+                        <p class="text-4xl pr-8" id="place">Name</p>
+                        <p class="text-2xl pr-8" id="state">State</p>
+                        <p class="text-2xl pr-8" id="country">Country</p>
+                    </div> -->
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="mt-10 w-full h-fit">
+            <p class="text-6xl font-bold text-white mb-4 ">Today's Weather</p>
+            <div class="relative w-full h-96 mx-auto bg-black bg-opacity-50 p-4 border border-white rounded-3xl">
+                <div class="w-1/5 h-fit flex items-end justify-between text-white font-medium">
+                    <p class="text-4xl" id="place">Location</p>
+                    <p class="text-2xl" id="state">State</p>
+                    <p class="text-2xl" id="country">Country</p>
+                </div>
+                
+            </div>
+        </section>
+
+    </section>
+    <script src="../API/search_loaction.js"></script>
 </body>
 </html>
