@@ -8,7 +8,7 @@
     <link rel="icon" href="../assets/img/logo.svg">
 </head>
 <body class="container relative w-screen h-fit bg-cover bg-center mx-auto" style="background-image: url('../assets/img/sky.png')" id="body">
-    <section class="hidden z-50 w-full h-[45rem]" id="entry">
+    <section class="relative z-50 w-full h-[45rem]" id="entry">
         <header class="relative z-50 w-full md:h-28 flex items-center justify-between bg-gray-100 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-lg shadow-lg p-4 mt-4">
             <img src="../assets/img/logo.svg" alt="logo" width="110" height="60">
 
@@ -56,7 +56,7 @@
         </div>
     </section>
 
-    <section class="w-full" id="main">
+    <section class="hidden w-full" id="main">
         <form  id="myForm2" action="./index.html" method="POST" class="mt-8 w-full h-full flex items-center justify-center">
             <input type="text" name="place2" class="rounded-l-full w-5/6 h-20 text-4xl p-4 pl-9 focus:outline-green-400 shadow-2xl" placeholder="Enter the region or area">
             <button type="submit" id="search_btn">
@@ -66,7 +66,7 @@
 
         <section class="mt-10 w-full h-fit">
             <p class="text-6xl font-bold text-white mb-4 ">Search Results</p>
-            <div class="relative w-fit h-96 mx-auto bg-black bg-opacity-50 pt-0 p-4 border border-white rounded-3xl">
+            <div class="relative w-full h-fit h-96 mx-auto bg-black bg-opacity-50 pt-0 p-4 border border-white rounded-3xl">
                 <div class="w-full h-full flex-col justify-around text-white font-medium px-4 pt-0" id="options">
                     <!-- <div class="w-full h-1/5 flex items-end border-b border-white" id="first">
                         <p class="text-4xl pr-8" id="place">Name</p>
