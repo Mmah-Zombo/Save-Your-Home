@@ -7,47 +7,45 @@
     <link rel="stylesheet" href="../assets/css/output.css">
     <link rel="icon" href="../assets/img/logo.svg">
 </head>
-<body class="container relative w-screen h-fit bg-cover bg-center mx-auto" style="background-image: url('../assets/img/sky.png')" id="body">
-    <section class="relative z-50 w-full h-[45rem]" id="entry">
+<body class="container pt-0 relative w-screen h-fit bg-cover mx-auto" style="background-image: url('../assets/img/sky.png')" id="body">
+    <section class="relative z-50 w-full h-[45rem] px-4 lg:px-0" id="entry">
         <header class="relative z-50 w-full md:h-28 flex items-center justify-between bg-gray-100 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-lg shadow-lg p-4 mt-4">
-            <img src="../assets/img/logo.svg" alt="logo" width="110" height="60">
+            <img src="../assets/img/logo.svg" alt="logo" class="w-16 h-16 md:w-24 md:h-24">
 
-            <ul class="nav w-2/5 h-full hidden md:flex items-center justify-between text-green_y text-2xl font-bold font-righteous">
-                <li><a href="./index.html" class="px-7 py-2 w-1/4 h-full hover:bg-green_y hover:text-blue-100 rounded-full">Home</a></li>
+            <ul class="nav w-fit h-fit text-green_y text-xl md:text-2xl font-bold font-righteous">
                 <li><a href="./about.html" class="px-7 py-2 w-1/4 h-full hover:bg-green_y hover:text-blue-100 rounded-full">About</a></li>
-                <li><a href="./contact.html" class="px-7 py-2 w-1/4 h-full hover:bg-green_y hover:text-blue-100 rounded-full">Contact</a></li>
             </ul>
         </header>
 
-        <section class="relative z-50 w-full h-fit p-4 mt-16">
+        <section class="relative z-50 w-full h-fit p-4 mt-4 md:mt-16">
             <form  id="myForm" action="" method="POST" class="w-full h-full flex items-center justify-center">
-                <input type="text" name="place" class="w-5/6 h-20 text-4xl p-4 focus:outline-green-400" placeholder="Enter the region or area">
+                <input type="text" name="place" class="w-5/6 h-10 md:h-20 text-xl md:text-4xl p-4 pl-5 md:pl-9 focus:outline-green-400 shadow-2xl" placeholder="Enter the region or area">
                 <button type="submit" id="search_btn">
-                    <div class="flex items-center justify-center text-white h-[5rem] w-[10rem] bg-gradient-to-br from-oxford_blue to-green-300"><img src="../assets/img/search-location.svg" alt="search" class="w-16 h-16"></div>
+                    <div class="flex items-center justify-center text-white h-10 md:h-20 w-20 md:w-40 bg-gradient-to-br from-oxford_blue to-green-300"><img src="../assets/img/search-location.svg" alt="search" class="w-8 h-8"></div>
                 </button>
             </form>
     
-            <div class="empty_display w-full mt-16 h-fit grid grid-cols-3 gap-5">
-                <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-60 p-4 flex flex-col justify-around items-center">
-                    <img src="../assets/img/Vector.svg" alt="cloud" class="w-28 h-28">
-                    <p class="text-3xl font-semibold text-oxford_blue">Know today's weather</p>
+            <div class="empty_display w-full mt-8 md:mt-16 h-fit flex flex-col justify-between items-center md:grid md:grid-cols-3 md:gap-5">
+                <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-30 md:h-60 p-4 mb-4 flex flex-col justify-around items-center">
+                    <img src="../assets/img/Vector.svg" alt="cloud" class="h-14 w-14 md:w-28 md:h-28">
+                    <p class="text-xl md:text-3xl font-semibold text-oxford_blue">Know today's weather</p>
                 </div>
-                <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-60 p-4 flex flex-col justify-around items-center">
-                    <img src="../assets/img/graph.svg" alt="cloud" class="w-28 h-28">
-                    <p class="text-3xl font-semibold text-oxford_blue">Analyze the changes</p>
+                <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-30 md:h-60 p-4 mb-4 flex flex-col justify-around items-center">
+                    <img src="../assets/img/graph.svg" alt="cloud" class="h-14 w-14 md:w-28 md:h-28">
+                    <p class="text-xl md:text-3xl font-semibold text-oxford_blue">Analyze the changes</p>
                 </div>
-                <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-60 p-4 flex flex-col justify-around items-center">
-                    <img src="../assets/img/sun.svg" alt="cloud" class="w-28 h-28">
-                    <p class="text-3xl font-semibold text-oxford_blue">Know tomorrow's weather</p>
+                <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-30 md:h-60 p-4 mb-4 flex flex-col justify-around items-center">
+                    <img src="../assets/img/sun.svg" alt="cloud" class="h-14 w-14 md:w-28 md:h-28">
+                    <p class="text-xl md:text-3xl font-semibold text-oxford_blue">Know tomorrow's weather</p>
                 </div>
     
             </div>
         </section>
 
         <div class="relative z-50 mt-16 flex items-center justify-around w-full h-min">
-            <div class="p-0 m-0 w-3/6 mb-16">
-                <h1 class="text-oxford_blue text-8xl font-bold">You <span class="text-green_y">Can't Fight</span>  What <br> You <span class="text-green_y">Don't Know</span>!</h1>
-                <p class="text-xl text-charcoal font-normal p-2">Studying the weather is crucial in the fight against climate change. It helps us identify patterns and trends that help us predict 
+            <div class="p-0 m-0 w-full md:w-[60%] mb-8 md:mb-16">
+                <h1 class="text-oxford_blue text-center md:text-left text-4xl md:text-8xl font-bold">You <span class="text-green_y">Can't Fight</span> <br> What <br> You <span class="text-green_y">Don't Know</span>!</h1>
+                <p class="text-md md:text-xl text-charcoal font-normal p-2">Studying the weather is crucial in the fight against climate change. It helps us identify patterns and trends that help us predict 
                     future weather events and prepare for them.<br>It is also important for developing new technologies and strategies to reduce greenhouse gas 
                     emissions and slow down climate change.
                 </p>
@@ -56,18 +54,18 @@
         </div>
     </section>
 
-    <section class="hidden w-full" id="main">
+    <section class="hidden w-full px-4 lg:px-0" id="main">
         <form  id="myForm2" action="./index.html" method="POST" class="mt-8 w-full h-full flex items-center justify-center">
-            <input type="text" name="place2" class="rounded-l-full w-5/6 h-20 text-4xl p-4 pl-9 focus:outline-green-400 shadow-2xl" placeholder="Enter the region or area">
+            <input type="text" name="place2" class="rounded-l-full w-5/6 h-10 md:h-20 text-xl md:text-4xl p-4 pl-5 md:pl-9 focus:outline-green-400 shadow-2xl" placeholder="Enter the region or area">
             <button type="submit" id="search_btn">
-                <div class="flex items-center justify-center text-white h-[5rem] w-[10rem] bg-gradient-to-br from-oxford_blue to-green-300"><img src="../assets/img/search-location.svg" alt="search" class="w-16 h-16"></div>
+                <div class="flex items-center justify-center text-white h-10 md:h-20 w-20 md:w-40 bg-gradient-to-br from-oxford_blue to-green-300"><img src="../assets/img/search-location.svg" alt="search" class="w-8 h-8 md:w-16 md:h-16"></div>
             </button>
         </form>
 
-        <section class="mt-10 w-full h-fit">
-            <p class="text-6xl font-bold text-white">Search Results</p>
-            <p class="text-md font-medium  mb-4 text-white">Select the location which weather info you want to know</p>
-            <div class="relative w-1/2 h-fit bg-white shadow-xl bg-opacity-50 pt-0 p-4 border border-green-200 rounded-3xl">
+        <section class="mt-5 md:mt-10 w-full h-fit">
+            <p class="text-3xl md:text-6xl font-bold text-white" id="output">Search Results</p>
+            <p class="text-md font-medium  mb-4 text-white">Select the location for which weather information</p>
+            <div class="relative w-full md:w-1/2 h-fit bg-white shadow-xl bg-opacity-50 pt-0 p-4 border border-green-200 rounded-3xl">
                 <div class="w-full h-full flex-col justify-around  font-medium px-4 pt-0 hover:cursor-pointer" id="options">
                     <!-- Dynamic content -->
                 </div>
@@ -76,18 +74,21 @@
         </section>
 
         <section class="mt-10 w-full h-fit mb-8">
-            <p class="text-6xl font-bold text-white mb-4 ">Today's Weather</p>
-            <div class="relative w-full h-fit mx-auto bg-black bg-opacity-50 p-4 border border-white rounded-3xl">
-                <div class="w-1/3 h-fit flex items-end justify-between bg-oxford_blue p-4 rounded-3xl shadow-sky-200 shadow-sm text-white font-medium" id="location">
-                    <p class="text-4xl" id="place">Location</p>
-                    <p class="text-2xl" id="state">State</p>
-                    <p class="text-2xl" id="country">Country</p>
+            <div class="text-xl md:text-4xl font-bold text-white mb-4 flex items-center justify-between">
+                <p class="w-1/2">Today's Weather</p>
+                <p class="hidden md:block w-1/2">Weather Forecast</p>
+            </div>
+            <div class="relative w-full h-fit mx-auto bg-black bg-opacity-50 p-4 border border-white rounded-3xl" id="black_box">
+                <div class="w-full md:w-2/4 h-fit flex items-end justify-between bg-oxford_blue p-4 rounded-3xl shadow-sky-200 shadow-sm text-white font-medium" id="location">
+                    <p class="text-xl md:text-4xl" id="place">Location</p>
+                    <p class="text-lg md:text-2xl" id="state">State</p>
+                    <p class="text-lg md:text-2xl" id="country">Country</p>
                 </div>
-                <div class="w-full h-full mt-4 grid grid-cols-3 gap-5">
-                    <div class="w-full h-full p-2 border-r border-white">
+                <div class="w-full h-full mt-4 flex flex-col items-center justify-between md:grid md:grid-cols-3 md:gap-5">
+                    <div class="w-full h-full p-2 md:border-r md:border-white">
                         <div class="w-full h-32 flex justify-between items-center bg-white bg-opacity-80 rounded-lg p-4 mb-8">
                             <img src="../assets/img/sun.svg" alt="weather icon" class="h-full w-fit" id="img_w">
-                            <div class="w-2/3 h-full flex flex-col justify-around" id="location-data">
+                            <div class="w-[80%] h-full flex flex-col justify-around" id="location-data">
                                 <!-- Dynamic content -->
                             </div>
                         </div>
@@ -97,12 +98,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full h-full p-4 border-r border-white">
-                        <p class="text-lg font-bold text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti sit animi id, nesciunt veritatis voluptatibus modi dolorum obcaecati sint vel quibusdam voluptatem mollitia eligendi reiciendis ut doloribus labore odit laborum. Laboriosam quisquam molestias assumenda, non aut vitae maxime ab maiores ratione commodi, quas tempore et debitis officia voluptatibus, enim neque voluptas suscipit. Itaque beatae numquam ipsam dolore doloremque voluptatum.</p>
+
+                    <div class="md:hidden w-full px-4 text-white text-lg font-semibold">
+                        <p class="">Weather Forecast</p>
                     </div>
-                    <div class="w-full h-full p-4">
-                        <p class="text-lg font-bold text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti sit animi id, nesciunt veritatis voluptatibus modi dolorum obcaecati sint vel quibusdam voluptatem mollitia eligendi reiciendis ut doloribus labore odit laborum. Laboriosam quisquam molestias assumenda, non aut vitae maxime ab maiores ratione commodi, quas tempore et debitis officia voluptatibus, enim neque voluptas suscipit. Itaque beatae numquam ipsam dolore doloremque voluptatum.</p>
+                    <div class="w-full h-full p-4 col-span-2 flex items-center justify-between overflow-x-scroll" id="forecast">
+                        <!-- Dynamic content -->
                     </div>
+                   
                 </div>
             </div>
         </section>
