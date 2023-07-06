@@ -118,7 +118,7 @@ form.addEventListener("submit", (event) => {
 
                         const date = new Date(dt * 1000);
                         const dayOfWeek = days[date.getDay()];
-                        const time = date.toLocaleTimeString();
+                        const time = date.toLocaleTimeString().slice(0, -3);
                         let new_div = document.createElement('div');
                         new_div.innerHTML =
                         `
@@ -206,7 +206,7 @@ form.addEventListener("submit", (event) => {
 
                         const date = new Date(dt * 1000);
                         const dayOfWeek = days[date.getDay()];
-                        const time = date.toLocaleTimeString();
+                        const time = date.toLocaleTimeString().slice(0, -3);
                         let new_div = document.createElement('div');
                         new_div.innerHTML =
                         `
@@ -328,7 +328,7 @@ form2.addEventListener("submit", (event) => {
 
                         const date = new Date(dt * 1000);
                         const dayOfWeek = days[date.getDay()];
-                        const time = date.toLocaleTimeString();
+                        const time = date.toLocaleTimeString().slice(0, -3);
                         let new_div = document.createElement('div');
                         new_div.innerHTML =
                         `
@@ -398,8 +398,7 @@ form2.addEventListener("submit", (event) => {
                         <p class="text-lg md:text-2xl text-oxford_blue">${weather_main['humidity']}%</p>
                     </div>
                     `
-                    // console.log(data['weather'], data['main'])
-                    // console.log(typeof(data['main']))
+                    
                 })
 
                 // Weather forecast for each location on the list
@@ -417,7 +416,7 @@ form2.addEventListener("submit", (event) => {
 
                         const date = new Date(dt * 1000);
                         const dayOfWeek = days[date.getDay()];
-                        const time = date.toLocaleTimeString();
+                        const time = date.toLocaleTimeString().slice(0, -3);
                         let new_div = document.createElement('div');
                         new_div.innerHTML =
                         `
