@@ -28,9 +28,10 @@ form.addEventListener("submit", (event) => {
     main.classList.add("relative");
 
     area = form.place.value;
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${area}&limit=7&appid=${API}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${area}&limit=7&appid=${API}`)
     .then(res => res.json())
     .then(data => {
+        // Checks if there is data available for the location entered
         if (Object.keys(data).length === 0) {
             output.innerText = "";
             output.innerText = "No results found from Open Weather";
@@ -45,6 +46,18 @@ form.addEventListener("submit", (event) => {
             const divElement = document.createElement('div');
             divElement.className = 'w-full h-1/5 flex items-center border-b border-white hover:cursor-pointer';
 
+            // checks if the name, state and country of a location is undefined
+            if (each['state'] == undefined) {
+                each['state'] = "";
+            }
+            if (each['name'] == undefined) {
+                each['name'] = "";
+            }
+            if (each['country'] == undefined) {
+                each['country'] = "";
+            }
+            
+            // creates of a list of places with the same name
             divElement.innerHTML = 
             `
             <p class="text-xl md:text-4xl pr-8" id="place">${each['name']}</p>
@@ -56,9 +69,9 @@ form.addEventListener("submit", (event) => {
                 location_info.innerHTML = ""
                 location_info.innerHTML =
                 `
-                <p class="text-4xl" id="place">${each['name']}</p>
-                <p class="text-2xl" id="state">${each['state']}</p>
-                <p class="text-2xl" id="country">${each['country']}</p>
+                <p class="text-xl md:text-4xl" id="place">${each['name']}</p>
+                <p class="text-lg md:text-2xl" id="state">${each['state']}</p>
+                <p class="text-lg md:text-2xl" id="country">${each['country']}</p>
                 `
 
                 const lat = each['lat'];
@@ -118,7 +131,8 @@ form.addEventListener("submit", (event) => {
 
                         const date = new Date(dt * 1000);
                         const dayOfWeek = days[date.getDay()];
-                        const time = date.toLocaleTimeString().slice(0, -3);
+                        const time = date.toLocaleTimeString().slice(0, -6);
+                        const am_pm = date.toLocaleTimeString().slice(-2);
                         let new_div = document.createElement('div');
                         new_div.innerHTML =
                         `
@@ -127,7 +141,7 @@ form.addEventListener("submit", (event) => {
                             <img src="https://openweathermap.org/img/wn/${f_weather['icon']}@2x.png" alt="weather_icon">
                             <div class="flex flex-col items-center justify-between">
                                 <p class="mb-2">${f_weather['description']}</p>
-                                <p>${time} - ${(f_temp - 273.15).toFixed(2)} C</p>
+                                <p>${time} ${am_pm} - ${(f_temp - 273.15).toFixed(2)} C</p>
                             </div>
                         </div>
                         `
@@ -138,17 +152,20 @@ form.addEventListener("submit", (event) => {
             count += 1;
 
             divElement.addEventListener("click", (event) => {
+
+                // Adds the heading for the black box that displays the weather data
                 location_info.innerHTML = ""
                 location_info.innerHTML =
                 `
-                <p class="text-4xl" id="place">${each['name']}</p>
-                <p class="text-2xl" id="state">${each['state']}</p>
-                <p class="text-2xl" id="country">${each['country']}</p>
+                <p class="text-xl md:text-4xl" id="place">${each['name']}</p>
+                <p class="text-lg md:text-2xl" id="state">${each['state']}</p>
+                <p class="text-lg md:text-2xl" id="country">${each['country']}</p>
                 `;
 
                 const lat = each['lat'];
                 const lon = each['lon'];
 
+                // gets weather data on each location in the list
                 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${KEY}`)
                 .then(res => res.json())
                 .then (data => {
@@ -187,8 +204,7 @@ form.addEventListener("submit", (event) => {
                         <p class="text-lg md:text-2xl text-oxford_blue">${weather_main['humidity']}%</p>
                     </div>
                     `
-                    console.log(data['weather'], data['main'])
-                    console.log(typeof(data['main']))
+                    
                 })
 
                 // Weather forecast for each location on the list
@@ -206,7 +222,9 @@ form.addEventListener("submit", (event) => {
 
                         const date = new Date(dt * 1000);
                         const dayOfWeek = days[date.getDay()];
-                        const time = date.toLocaleTimeString().slice(0, -3);
+                        const time = date.toLocaleTimeString().slice(0, -6);
+                        const am_pm = date.toLocaleTimeString().slice(-2);
+                        console.log(time, am_pm)
                         let new_div = document.createElement('div');
                         new_div.innerHTML =
                         `
@@ -215,7 +233,7 @@ form.addEventListener("submit", (event) => {
                             <img src="https://openweathermap.org/img/wn/${f_weather['icon']}@2x.png" alt="weather_icon">
                             <div class="flex flex-col items-center justify-between">
                                 <p class="mb-2">${f_weather['description']}</p>
-                                <p>${time} - ${(f_temp - 273.15).toFixed(2)} C</p>
+                                <p>${time} ${am_pm} - ${(f_temp - 273.15).toFixed(2)} C</p>
                             </div>
                         </div>
                         `
@@ -236,7 +254,7 @@ form2.addEventListener("submit", (event) => {
     area = form2.place2.value;
     display.innerHTML = "" ;
 
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${area}&limit=7&appid=${API}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${area}&limit=7&appid=${API}`)
     .then(res => res.json())
     .then(data => {
         if (Object.keys(data).length === 0) {
@@ -252,6 +270,18 @@ form2.addEventListener("submit", (event) => {
             const divElement = document.createElement('div');
             divElement.className = 'w-full h-1/5 flex items-center border-b border-white hover:cursor-pointer';
 
+            // checks if the name, state and country of a location is undefined
+            if (each['state'] == undefined) {
+                each['state'] = "";
+            }
+            if (each['name'] == undefined) {
+                each['name'] = "";
+            }
+            if (each['country'] == undefined) {
+                each['country'] = "";
+            }
+
+            
             divElement.innerHTML = 
             `
             <p class="text-xl md:text-4xl pr-8" id="place">${each['name']}</p>
@@ -328,7 +358,8 @@ form2.addEventListener("submit", (event) => {
 
                         const date = new Date(dt * 1000);
                         const dayOfWeek = days[date.getDay()];
-                        const time = date.toLocaleTimeString().slice(0, -3);
+                        const time = date.toLocaleTimeString().slice(0, -6);
+                        const am_pm = date.toLocaleTimeString().slice(-2);
                         let new_div = document.createElement('div');
                         new_div.innerHTML =
                         `
@@ -337,7 +368,7 @@ form2.addEventListener("submit", (event) => {
                             <img src="https://openweathermap.org/img/wn/${f_weather['icon']}@2x.png" alt="weather_icon">
                             <div class="flex flex-col items-center justify-between">
                                 <p class="mb-2">${f_weather['description']}</p>
-                                <p>${time} - ${(f_temp - 273.15).toFixed(2)} C</p>
+                                <p>${time} ${am_pm} - ${(f_temp - 273.15).toFixed(2)} C</p>
                             </div>
                         </div>
                         `
@@ -416,7 +447,8 @@ form2.addEventListener("submit", (event) => {
 
                         const date = new Date(dt * 1000);
                         const dayOfWeek = days[date.getDay()];
-                        const time = date.toLocaleTimeString().slice(0, -3);
+                        const time = date.toLocaleTimeString().slice(0, -6);
+                        const am_pm = date.toLocaleTimeString().slice(-2);
                         let new_div = document.createElement('div');
                         new_div.innerHTML =
                         `
@@ -425,7 +457,7 @@ form2.addEventListener("submit", (event) => {
                             <img src="https://openweathermap.org/img/wn/${f_weather['icon']}@2x.png" alt="weather_icon">
                             <div class="flex flex-col items-center justify-between">
                                 <p class="mb-2">${f_weather['description']}</p>
-                                <p>${time} - ${(f_temp - 273.15).toFixed(2)} C</p>
+                                <p>${time} ${am_pm} - ${(f_temp - 273.15).toFixed(2)} C</p>
                             </div>
                         </div>
                         `

@@ -1156,10 +1156,6 @@ video {
     line-height: 1.75rem;
   }
 
-  .md\:font-medium {
-    font-weight: 500;
-  }
-
   .md\:font-bold {
     font-weight: 700;
   }
@@ -1167,26 +1163,6 @@ video {
   .md\:text-black {
     --tw-text-opacity: 1;
     color: rgb(0 0 0 / var(--tw-text-opacity));
-  }
-
-  .md\:text-green-950 {
-    --tw-text-opacity: 1;
-    color: rgb(5 46 22 / var(--tw-text-opacity));
-  }
-
-  .md\:text-charcoal {
-    --tw-text-opacity: 1;
-    color: rgb(54 65 86 / var(--tw-text-opacity));
-  }
-
-  .md\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
-  .md\:text-oxford_blue {
-    --tw-text-opacity: 1;
-    color: rgb(1 22 56 / var(--tw-text-opacity));
   }
 }
 
