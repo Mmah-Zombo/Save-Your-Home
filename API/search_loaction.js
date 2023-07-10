@@ -240,6 +240,38 @@ form.addEventListener("submit", (event) => {
                         forecast.appendChild(new_div)
                     }
                 })
+
+                // Weather forecast for each location on the list
+                fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=4&appid=${KEY}`)
+                .then(res => res.json())
+                .then (data => {
+                    forecast.innerHTML = "";
+
+                    let list_in = data['list'];
+                    for (let each in list_in) {
+                        let list_value = list_in[each];
+                        let f_weather = list_value['weather'][0];
+                        let dt = list_value['dt'];
+                        const f_temp = list_value['main']['temp']
+
+                        const date = new Date(dt * 1000);
+                        const dayOfWeek = days[date.getDay()];
+                        const time = date.toLocaleTimeString().slice(0, -3);
+                        let new_div = document.createElement('div');
+                        new_div.innerHTML =
+                        `
+                        <div class="w-52 md:w-48 h-full p-4 mr-4 md:mr-0 bg-white bg-opacity-50 flex flex-col items-center justify-between rounded-lg">
+                            <p class="p-2 px-4 bg-black bg-opacity-50 rounded-lg text-white text-lg">${dayOfWeek}</p>
+                            <img src="https://openweathermap.org/img/wn/${f_weather['icon']}@2x.png" alt="weather_icon">
+                            <div class="flex flex-col items-center justify-between">
+                                <p class="mb-2">${f_weather['description']}</p>
+                                <p>${time} - ${(f_temp - 273.15).toFixed(2)} C</p>
+                            </div>
+                        </div>
+                        `
+                        forecast.appendChild(new_div)
+                    }
+                })
             });
             
         };
@@ -409,7 +441,10 @@ form2.addEventListener("submit", (event) => {
                     <div class="w-full h-fit flex">
                         <p class="text-lg md:text-2xl  font-bold text-oxford_blue mr-3">Temp: </p>
                         <p class="text-lg md:text-2xl text-oxford_blue">${(weather_main['temp'] - 273.15).toFixed(2)} C</p>
+                        <p class="text-lg md:text-2xl  font-bold text-oxford_blue mr-3">Temp: </p>
+                        <p class="text-lg md:text-2xl text-oxford_blue">${(weather_main['temp'] - 273.15).toFixed(2)} C</p>
                     </div>
+                    
                     
                     `;
 
