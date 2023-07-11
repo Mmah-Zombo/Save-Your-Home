@@ -84,6 +84,10 @@ fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${area}&limit=7&appid=${A
             display.appendChild(divElement)
 ```
 
+## Technologies Used
+* [x] Tailwindcss: for designing the app
+* [x] Open Weather API: to get weather data
+* [x] HTML and Javascript (Programming languages): for functionality and structure.
 ## What Inspired This Project (My Story)
 
 >This project was inspired by my drive to solve one of __UN'S GLOBAL GOALS__. 
@@ -92,30 +96,16 @@ Since tackling climate change is one of them I decided to build a web app that h
 
 As a starting point, I have built this weather app to help people keep track of the weather conditIons of every place on earth, for it is one of the major factors in monitoring our planet's climate.
 
+## Process And Timeline
 
+>It wasn’t smooth nor easy. 
 
+The process wasn't smooth as everything was built from scratch, excluding the API. 
+It got frustrating at some point and sometimes I wish someone was there to help me. 
+If I had a teammate the project would have been finished earlier, with a more beautiful user interface and experience.
 
-___
-TECHNOLOGIES
-Libraries:
-Jetstream
-SQLAlchemy
-The ones that come with the frameworks and tools I will be using (such as the Python requests library)
-Languages:
-Python
-Javascript
-HTML & CSS
-SQL
-Php
-Frameworks:
-Tailwindcss
-Python Flask
-Laravel
-Livewire
-Resources:
-Internet connection and a laptop
-Selected APIs from Google
-Postman for API testing
-Visual Studio Code
-OpenWeather
-ChatGPT API
+> I built the app in approximately nine days
+
+The time set for the project was more than the time I spent on it, this was because I thought it was compulsory to build the maze project which I was not interested in. 
+So I had wasted some of my time on going about the maze project. By the time I realized it was optional and made a change to the project, time was not in my favor, so I had to go on hyper productive mood. 
+
