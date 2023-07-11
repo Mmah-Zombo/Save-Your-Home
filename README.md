@@ -31,6 +31,59 @@ The accuracy of the weather data is dependent on the Open Weather APIs used.
 
 ![Weather App at work](assets/img/app_img.jpeg)
 
+## Code Snippets of Core Algorithm
+
+Part of the HTML code that takes input from users.
+```html
+<form  id="myForm" action="" method="POST" class="w-full h-full flex items-center justify-center">
+    <input type="text" name="place" class="w-5/6 h-10 md:h-20 text-xl md:text-4xl p-4 pl-5 md:pl-9 focus:outline-green-400 shadow-2xl" placeholder="Enter the region or area">
+    <button type="submit" id="search_btn">
+        <div class="flex items-center justify-center text-white h-10 md:h-20 w-20 md:w-40 bg-gradient-to-br from-oxford_blue to-green-300"><img src="../assets/img/search-location.svg" alt="search" class="w-8 h-8 md:h-16 md:w-16"></div>
+    </button>
+</form>
+```
+
+Part of the javascript code that sends user inputs to the open Weather API and dynamically displays data to users.
+```javascript
+fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${area}&limit=7&appid=${API}`)
+    .then(res => res.json())
+    .then(data => {
+        // Checks if there is data available for the location entered
+        if (Object.keys(data).length === 0) {
+            output.innerText = "";
+            output.innerText = "No results found from Open Weather";
+            output.nextElementSibling.classList.add("hidden");
+        }
+        else {
+            output.innerText = "Search Results";
+            output.nextElementSibling.classList.remove("hidden");
+        }
+
+        for (let each of data){
+            const divElement = document.createElement('div');
+            divElement.className = 'w-full h-1/5 flex items-center border-b border-white hover:cursor-pointer';
+
+            // checks if the name, state and country of a location is undefined
+            if (each['state'] == undefined) {
+                each['state'] = "";
+            }
+            if (each['name'] == undefined) {
+                each['name'] = "";
+            }
+            if (each['country'] == undefined) {
+                each['country'] = "";
+            }
+            
+            // creates of a list of places with the same name
+            divElement.innerHTML = 
+            `
+            <p class="text-xl md:text-4xl pr-8" id="place">${each['name']}</p>
+            <p class="md:text-2xl pr-8" id="state">${each['state']}</p>
+            <p class="md:text-2xl pr-8" id="country">${each['country']}</p>
+            `
+            display.appendChild(divElement)
+```
+
 ## What Inspired This Project (My Story)
 
 >This project was inspired by my drive to solve one of __UN'S GLOBAL GOALS__. 
