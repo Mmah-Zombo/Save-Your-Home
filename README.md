@@ -12,6 +12,8 @@ __You can check it out on here:__
 * [The Landing Page for the weather app](https://moonlit-haupia-4f486e.netlify.app "landing page")
 * [The Weather App](https://lustrous-piroshki-2a1d02.netlify.app "save your home weather app")
 
+There is also a blog post that explains in detail how this project was built. You can find it here:
+* [The Story Of My First Web App](https://medium.com/@www.mariamzombo/the-story-of-my-first-web-app-912aef522f75 "the blog post")
 ## Usage
 
 1. Enter the location that you want weather data for and click the search button or the **ENTER** key on your key board.
