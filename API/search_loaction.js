@@ -4,7 +4,6 @@ const KEY = keys['KEY'];
 
 const form = document.getElementById("myForm");
 const form2 = document.getElementById("myForm2");
-const body = document.getElementById("body");
 const entry = document.getElementById("entry");
 const main = document.getElementById("main");
 const display = document.getElementById("options");
@@ -19,7 +18,6 @@ let area;
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    // body.setAttribute("style", "background-image: url('../assets/img/trees.jpg')");
     let count = 0;
     entry.classList.add("hidden");
     entry.classList.remove("relative");
@@ -42,6 +40,7 @@ form.addEventListener("submit", (event) => {
             output.nextElementSibling.classList.remove("hidden");
         }
 
+        // Gets each elemnent in the data from the API
         for (let each of data){
             const divElement = document.createElement('div');
             divElement.className = 'w-full h-1/5 flex items-center border-b border-white hover:cursor-pointer';
@@ -65,6 +64,8 @@ form.addEventListener("submit", (event) => {
             <p class="md:text-2xl pr-8" id="country">${each['country']}</p>
             `
             display.appendChild(divElement)
+
+            // Displays data for the first element in the list
             if (count === 0) {
                 location_info.innerHTML = ""
                 location_info.innerHTML =
@@ -77,6 +78,7 @@ form.addEventListener("submit", (event) => {
                 const lat = each['lat'];
                 const lon = each['lon'];
 
+                // Gets weather data for the first element
                 fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${KEY}`)
                 .then(res => res.json())
                 .then (data => {
@@ -289,6 +291,7 @@ form2.addEventListener("submit", (event) => {
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${area}&limit=7&appid=${API}`)
     .then(res => res.json())
     .then(data => {
+        // Checks if there is data available for the location entered
         if (Object.keys(data).length === 0) {
             output.innerText = "";
             output.innerText = "No results found from Open Weather";

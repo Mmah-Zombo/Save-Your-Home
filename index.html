@@ -8,7 +8,9 @@
     <link rel="icon" href="../assets/img/logo.svg">
 </head>
 <body class="container pt-0 relative w-screen h-fit bg-cover bg-no-repeat mx-auto" style="background-image: url('../assets/img/sky.png')" id="body">
+    <!-- The first view or layout of the app -->
     <section class="relative z-50 w-full h-[45rem] px-4 lg:px-0" id="entry">
+        <!-- Header -->
         <header class="relative z-50 w-full md:h-28 flex items-center justify-between bg-gray-100 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-lg shadow-lg p-4 mt-4">
             <img src="../assets/img/logo.svg" alt="logo" class="w-16 h-16 md:w-24 md:h-24">
 
@@ -18,13 +20,15 @@
         </header>
 
         <section class="relative z-50 w-full h-fit p-4 mt-4 md:mt-16">
+            <!-- The Search box and button -->
             <form  id="myForm" action="" method="POST" class="w-full h-full flex items-center justify-center">
                 <input type="text" name="place" class="w-5/6 h-10 md:h-20 text-xl md:text-4xl p-4 pl-5 md:pl-9 focus:outline-green-400 shadow-2xl" placeholder="Enter the region or area">
                 <button type="submit" id="search_btn">
                     <div class="flex items-center justify-center text-white h-10 md:h-20 w-20 md:w-40 bg-gradient-to-br from-oxford_blue to-green-300"><img src="../assets/img/search-location.svg" alt="search" class="w-8 h-8 md:h-16 md:w-16"></div>
                 </button>
             </form>
-    
+            
+            <!-- Display cards -->
             <div class="empty_display w-full mt-8 md:mt-16 h-fit flex flex-col justify-between items-center md:grid md:grid-cols-3 md:gap-5">
                 <div class="rounded-3xl shadow-lg hover:shadow-none bg-white bg-opacity-50 w-full h-30 md:h-60 p-4 mb-4 flex flex-col justify-around items-center">
                     <img src="../assets/img/Vector.svg" alt="cloud" class="h-14 w-14 md:w-28 md:h-28">
@@ -42,6 +46,7 @@
             </div>
         </section>
 
+        <!-- Motivational Text -->
         <div class="relative z-50 mt-16 flex items-center justify-around w-full h-min">
             <div class="p-0 m-0 w-full md:w-[60%] mb-8 md:mb-16">
                 <h1 class="text-oxford_blue text-center md:text-left text-4xl md:text-8xl font-bold">You <span class="text-green_y">Can't Fight</span> <br> What <br> You <span class="text-green_y">Don't Know</span>!</h1>
@@ -54,7 +59,9 @@
         </div>
     </section>
 
+    <!-- The Second layout of the app -->
     <section class="hidden w-full px-4 lg:px-0" id="main">
+        <!-- Search Box and button -->
         <form  id="myForm2" action="./index.html" method="POST" class="mt-8 w-full h-full flex items-center justify-center">
             <input type="text" name="place2" class="rounded-l-full w-5/6 h-10 md:h-20 text-xl md:text-4xl p-4 pl-5 md:pl-9 focus:outline-green-400 shadow-2xl" placeholder="Enter the region or area">
             <button type="submit" id="search_btn">
@@ -62,6 +69,7 @@
             </button>
         </form>
 
+        <!-- Search Results section -->
         <section class="mt-5 md:mt-10 w-full h-fit">
             <p class="text-3xl md:text-6xl font-bold text-white" id="output">Search Results</p>
             <p class="text-md font-medium  mb-4 text-white">Select the location for which weather information</p>
@@ -74,6 +82,7 @@
         </section>
 
         <section class="mt-10 w-full h-fit mb-8">
+            <!-- Current Weather Condition -->
             <div class="text-xl md:text-4xl font-bold text-white mb-4 flex items-center justify-between">
                 <p class="w-1/2">Today's Weather</p>
                 <p class="hidden md:block w-1/2">Weather Forecast</p>
@@ -99,6 +108,7 @@
                         </div>
                     </div>
 
+                    <!-- Weather Forecast section -->
                     <div class="md:hidden w-full px-4 text-white text-lg font-semibold">
                         <p class="">Weather Forecast</p>
                     </div>
