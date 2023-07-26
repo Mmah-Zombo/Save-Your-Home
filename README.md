@@ -94,9 +94,9 @@ fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${area}&limit=7&appid=${A
 
 >This project was inspired by my drive to solve one of __UN'S GLOBAL GOALS__. 
 
-Since tackling climate change is one of them I decided to build a web app that helps people to keep track of their communities' climate conditions and guide them on actions to take in other to save their communities from adverse climate change. 
+Since tackling climate change is one of them I decided to build a web app that helps people combat climate change. 
 
-As a starting point, I have built this weather app to help people keep track of the weather conditIons of every place on earth, for it is one of the major factors in monitoring our planet's climate.
+As a starting point, I have built this weather app to help people keep track of the weather conditions of every place on Earth, for it is one of the major factors in monitoring our planet's climate.
 
 ## Process And Timeline
 
